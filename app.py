@@ -1,5 +1,5 @@
 #Author:Dave Sharma
-#This webAPI uses FLASK
+#This web RESTAPI uses FLASK
 
 from sympy import Function, Derivative, dsolve, Eq, sin, cos, tan,symbols, log, sympify
 import sympy
@@ -42,41 +42,7 @@ def seperateVars(input):
             return frontSide+"*tan("+backSide+")"
         else:
             return "tan("+backSide+")"
-    # if "cos" in input or "sin" in input or "tan" in input:
-    #     tmp=""
-    #     index=0
-    #     if "cos" in input:
-    #         array = re.split("cos|(|)",input)
-    #
-    #
-    #     for i in range(len(input)):
-    #         if input[i]=="c" and input[i+1]=="o" and input[i+2]=="s":
-    #             for k in range(len(input)):
-    #                 if k>i+2 and input[k]==")":
-    #                     index=k
-    #                     break
-    #             tmp+=seperateVars(input[i+2:index])
-    #         elif input[i] == "s" and input[i + 1] == "i" and input[i + 2] == "n":
-    #             for k in range(len(input)):
-    #                 if k > i + 2 and input[k] == ")":
-    #                     index = k
-    #                     break
-    #             tmp += seperateVars(input[i + 2:index])
-    #         elif input[i] == "t" and input[i + 1] == "a" and input[i + 2] == "n":
-    #             for k in range(len(input)):
-    #                 if k > i + 2 and input[k] == ")":
-    #                     index = k
-    #                     break
-    #             tmp += seperateVars(input[i + 2:index])
-    #         else:
-    #             if input[i] == "x" or input[i] == "y":
-    #                 if i != 0:
-    #                     tmp += "*" + input[i]
-    #                 else:
-    #                     tmp += input[i]
-    #             else:
-    #                 tmp += input[i]
-    #     return tmp
+   
     elif "x" in input or "y" in input:
         holder=""
         for i in range(len(input)):
@@ -102,11 +68,6 @@ def countOrder(string):
 # need to take in an equation, use a parser to search and input correct values then output the correct equation
 
 def differentialSolver(input):
-    # input = "y'''+ 9y'= 10"
-
-    # newInput = "Derivative(y(x), x,x, x) + 9*y(x)"
-    # rhs = "10"
-
     yD = []
 
     input = input.replace("-", "+ -")
@@ -114,8 +75,7 @@ def differentialSolver(input):
 
     centerLine = 0;
     array = input.split("+")
-    # array=re.split("\+"",input)
-    # print (array)
+  
 
     for i in range(len(array)):
         array[i].replace(" ", "")
@@ -164,21 +124,7 @@ def differentialSolver(input):
                     equation += ',x'
                 equation += ')'
 
-    # outsideHolder =""
-    # for i in range(len(array)):
-    #     print(array[i])
-    #     if(i<centerLine):
-    #         if("y" in array[i] or "x" in array[i]):
-    #             if("'" not in array[i]):
-    #                 for k in range(len(array[i])):
-    #                     if(array[i][k]!="x" and array[i][k]!="y"):
-    #                         holder+=array[i][k]
-    #                     else:
-    #                         holder+="*"
-    #                         holder+=array[i][k]
-    #                         break
-    # equation+=outsideHolder
-    # print(outsideHolder)
+   
     rhsEqu = array[centerLine].split("=")
 
     rhsValue = ""
@@ -216,47 +162,6 @@ def differentialSolver(input):
                 # rhsValue+="+"+array[latterIndex]
 
     print(rhsValue)
-    # for i in yD:
-    #     print(i)
-
-
-    # inside = 0
-    # counter=0
-    # otherParts=[]
-    # for i in range(len(input)):
-    #     # print(inside)
-    #     # print(input[i])
-    #     # print(" ")
-    #     if(input[i]=='y'):
-    #         inside=1
-    #     elif(inside==1):
-    #         if(input[i]=="'"):
-    #             yD[counter] = yD[counter]+1
-    #         else:
-    #             inside=0
-    #             counter = counter + 1
-    #     else:
-    #         otherParts.append(input[i])
-    #
-    # equation=""
-    # for i in yD:
-    #     if(i>0):
-    #         if(equation==""):
-    #             equation+="Derivative(y(x)"
-    #             for k in range(i):
-    #                 equation+=',x'
-    #             equation+=')'
-    #         else:
-    #             equation+="+Derivative(y(x)"
-    #             for k in range(i):
-    #                 equation+=',x'
-    #             equation+=')'
-
-    # for i in otherParts:
-    #     if(equation==""):
-    #         equation+=i
-
-    # for i in yD:
 
     x = sympy.symbols('x')
     y = sympy.symbols('y', cls=Function)
@@ -270,36 +175,14 @@ def differentialSolver(input):
         return returnValue
     except:
         return "Could not Calculate Differential Equation"
-    # def toNumber(i):
-    #     holder = 0.0;
-    #     for every in i:
-    #         if(every=='.'):
-    #
-    #         else:
-    #             holder = holder*10+every
-    #
-
-# input="y'''+ cos(x)sin(x)+y'+y= 10"
-# array = re.split("cos", "10cos(xy)")
-# tryOut = ""
-# for i in range(len(array[1])):
-#     if array[1][i]!=')' and array[1][i]!='(':
-#         tryOut+=array[1][i]
-# print(seperateVars("10cos(xy)"))
-# print(array)
-# print(differentialSolver(input))
-# x = sympy.symbols('x')
-# y = sympy.symbols('y', cls=Function)
-# ode=Eq(Derivative(y(x),x,x,x)+9*cos(x)Derivative(y(x),x),10)
-# print(dsolve(ode,y(x)).rhs)
-# print(seperateVars("cos(x)"))
-
+   
+#FLASK WEB API
 from flask import Flask, request, jsonify
 from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
 CORS(app, support_credentials=True)
-
+#Route endpoint as api_website/
 @app.route('/', methods=['POST'])
 @cross_origin(supports_credentials=True)
 def result():

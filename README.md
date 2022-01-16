@@ -10,7 +10,7 @@ Set flask via
 
 ```
 set FLASK_APP=app.py
-  set FLASK_ENV=development
+set FLASK_ENV=development
 ```
 run the flask microframework
 ```
@@ -21,6 +21,7 @@ Replace localhost:5000 with the specific IP and Port Number displayed after runn
 Open index.html live server
 ```
 
+Some Screenshots
 ![Capture2](https://user-images.githubusercontent.com/81478885/149671857-fff9979f-6a5a-4a94-ae80-330c1d900cde.JPG)
 ![solutionJPG](https://user-images.githubusercontent.com/81478885/149671858-83b89b2e-a08b-4654-957e-dd80031a97a9.JPG)
 ![Capture3](https://user-images.githubusercontent.com/81478885/149671859-003e41b6-298f-4702-8386-e85b26417322.JPG)

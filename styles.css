@@ -1,0 +1,107 @@
+body{
+     background: linear-gradient(to right,rgb(234, 234, 235),rgb(245, 246, 248));
+   
+    /* background: linear-gradient(-45deg, #35a6c2, #1d61af, rgb(97, 221, 243), #00ffea);
+	background-size: 400% 500%;
+    animation: gradient 15s ease infinite; */
+}
+/* @keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+} */
+form{
+    display: inline-block;
+    margin: 0 auto;
+    width: 100%;
+    text-align:center;
+}
+
+.header{
+    font-size: larger;
+    font-family: sans-serif;
+    text-align: center;
+    color:rgb(177, 172, 172);
+}
+
+.container{
+    width: 100%;
+    text-align:center;
+}
+
+.container [type="text"]{
+    margin: 0 auto;
+    border-radius: 10px;
+    border:transparent;
+    height: 50px;
+    width:100vh;
+    font-size:x-large;
+}
+
+.container button{
+    background-color: rgb(129, 129, 247);
+    padding: 15px;
+    border: transparent;
+    border-radius: 10px;
+    font-size:medium;
+    color: white;
+    margin-left:10px;
+}
+
+.container button:hover{
+    background-color: rgb(57, 57, 245);
+    font-size: large;
+    transition: 0.5s ease-in-out;
+}
+
+#helper{
+    width:80%;
+    margin: 0 auto;
+    margin-top: 50px;
+    display: grid;
+    /* border-bottom: 1px solid #999;
+    border-left: 1px solid#999; */
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+#helper > div {
+    border-top: 1px solid #d7d9e4;
+    border-right: 1px solid #d7d9e4;
+    border-width: 2px;
+    border-radius:5px;
+}
+.button{
+    border: 0.5px solid #d7d9e4;
+    line-height: 70px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 100;
+    cursor: pointer;
+}
+.button:hover{
+    line-height: 70px;
+    text-align: center;
+    font-size: 30px;
+    font-weight:100;
+    cursor: pointer;
+    color:rgb(255, 255, 255);
+    transition:0.5s ease-in-out;
+    background-color: rgb(101, 204, 170);
+}
+
+#info{
+    background-color: white;
+    width:100vh;
+    height:30vh;
+    margin: 0 auto;
+    margin-top: 100px;
+    font-size:xx-large;
+    font-weight: bolder;
+    line-height: 200px;
+    overflow-y:auto ;
+}

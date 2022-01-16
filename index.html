@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    
+    <title>Document</title>
+</head>
+<body>
+    <div class="header"><h1>Differential Equation Solver</h1></div>
+    
+    <!-- <form action="http://127.0.0.1:5000/" method="post" >
+        <div class="container">
+          <input id="equation" type="text" placeholder="Enter Equation" name="diffEquation" required>
+          <button type="submit">Solve</button>
+          <div class="buttons">
+        </div>
+    </form> -->
+
+    <div class="container">
+        <input id="equation" type="text" placeholder="Enter Equation eg. y''+y'=10" name="diffEquation" required>
+        <button type="submit" onclick="myFunction()">Solve</button>
+        <div class="buttons">
+      </div>
+
+    <div id="helper">
+        <div id="1" class="button">x</div>
+        <div id="2" class="button">y</div>
+        <div id="3" class="button"><b>^</b></div>
+        <div id="4" class="button">Sqrt</div>
+        <div id="5" class="button">/</div>
+        <div id="6" class="button"></div>
+
+        <!-- <div id="1" class="button">1</div>
+        <div id="2" class="button">2</div>
+        <div id="3" class="button">3</div>
+        <div id="4" class="button">4</div>
+        <div id="5" class="button">5</div>
+        <div id="6" class="button">6</div> -->
+
+    </div>
+
+    <div id="info"></div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

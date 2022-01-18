@@ -1,5 +1,5 @@
 # Online-Differential-Equation-Solver-with-Python-Flask-API
-Online differential equation solver inspired by online math programs such as Symbolab, that calculates the differential equation entered by a user, using JS/AJAX , FLASK in Python for the REST API, and Sympy for the actual solving of the differential equation
+Online differential equation solver inspired by online math programs such as Symbolab, that calculates the differential equation entered by a user, using JS/AJAX , FLASK in Python for the REST API, and Sympy for the actual solving of the differential equation in Python.
 The user enters the differential equation in a particular form such as y''+y'=1 and the value in the input-box is sent to the python REST API using AJAX in app.js. Then the python
 REST API recieves the string value diff. equation to solve, uses a custom parser to organize the equation in a particular way for Sympy to solve the differential equation, and returns the sovled equation back to app.js which uses AJAX to display the new data of the solved differential equation.
 
